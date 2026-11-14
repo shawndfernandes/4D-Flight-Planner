@@ -1,0 +1,311 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: system-ui, sans-serif;
+  background: #0b0f19;
+  color: #fff;
+}
+
+#cesiumContainer {
+  width: 100%;
+  height: 72%;
+}
+
+#hud {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 10;
+  background: rgba(15, 23, 42, 0.94);
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  width: 435px;
+  max-height: 68vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+.row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+  align-items: center;
+}
+
+#hud input[type="text"],
+#hud input:not([type]) {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #475569;
+  background: #1e293b;
+  color: #fff;
+  font-size: 12px;
+  min-width: 0;
+}
+
+#hud input.num-input {
+  flex: 0 0 52px;
+  padding: 6px 4px;
+  border-radius: 4px;
+  border: 1px solid #475569;
+  background: #1e293b;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+#hud button.primary {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  background: #3b82f6;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+#hud button.route-btn {
+  background: #10b981;
+}
+
+.tab-bar,
+.layer-bar,
+.radar-bar {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+  align-items: center;
+}
+
+.wx-tab,
+.layer-btn,
+.ctrl-btn {
+  flex: 1;
+  padding: 5px 6px;
+  font-size: 11px;
+  border-radius: 4px;
+  border: 1px solid #475569;
+  background: #1e293b;
+  color: #cbd5e1;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.wx-tab.active {
+  background: #0284c7;
+  border-color: #38bdf8;
+  color: #fff;
+}
+
+.layer-btn.active,
+.ctrl-btn.active {
+  background: #2563eb;
+  border-color: #60a5fa;
+  color: #fff;
+}
+
+.export-btn {
+  background: #334155;
+  border-color: #64748b;
+  color: #f8fafc;
+}
+
+.export-btn:hover {
+  background: #475569;
+}
+
+#radarFrameBadge {
+  font-family: monospace;
+  font-size: 11px;
+  padding: 4px 7px;
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+.slider-panel {
+  margin-top: 8px;
+  padding: 8px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #cbd5e1;
+}
+
+.slider-row span.lbl {
+  width: 92px;
+  font-weight: 600;
+}
+
+.slider-row input[type="range"] {
+  flex: 1;
+  accent-color: #38bdf8;
+  cursor: pointer;
+  height: 4px;
+}
+
+.slider-row span.val {
+  width: 34px;
+  text-align: right;
+  font-family: monospace;
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+.switch-bar {
+  margin-top: 8px;
+  padding: 6px 8px;
+  background: #0c4a6e;
+  border: 1px solid #0284c7;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #e0f2fe;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 18px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider-round {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #334155;
+  transition: 0.2s;
+  border-radius: 18px;
+}
+
+.slider-round:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+input:checked + .slider-round {
+  background-color: #22c55e;
+}
+
+input:checked + .slider-round:before {
+  transform: translateX(18px);
+}
+
+#twcInfoPanel {
+  margin-top: 6px;
+  padding: 8px;
+  background: #0f172a;
+  border: 1px solid #0369a1;
+  border-radius: 6px;
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+#aircraftCard {
+  display: none;
+  margin-top: 8px;
+  padding: 9px;
+  background: #1e293b;
+  border-radius: 6px;
+  border-left: 4px solid #22c55e;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.legend-box {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #334155;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  font-size: 11px;
+  color: #cbd5e1;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sym-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sym-line {
+  width: 14px;
+  height: 4px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.sym-dash {
+  width: 14px;
+  height: 0;
+  border-top: 2.5px dashed #22d3ee;
+  flex-shrink: 0;
+}
+
+.sym-box {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+#profilePanel {
+  width: 100%;
+  height: 28%;
+  background: #0f172a;
+  border-top: 1px solid #334155;
+  box-sizing: border-box;
+  padding: 8px 16px;
+}
+
+canvas#altitudeChart {
+  width: 100%;
+  height: 85%;
+  background: #020617;
+  border-radius: 6px;
+}

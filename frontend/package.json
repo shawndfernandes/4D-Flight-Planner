@@ -1,0 +1,9 @@
+{
+  "name": "4d-flight-icing-pathfinder-ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CesiumJS 3D globe and HUD for 4D flight trajectory, icing, and radar avoidance",
+  "dependencies": {
+    "cesium": "^1.121.0"
+  }
+}

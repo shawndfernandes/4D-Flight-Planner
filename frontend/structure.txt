@@ -1,0 +1,17 @@
+
+
+frontend/
+├── index.html              # Minimal HTML shell (~25 lines)
+├── styles.css              # Dedicated HUD, Slider, Switch & Layout Styles
+├── hud_builder.js          # Renders the HUD Controls, Opacity Sliders, Switches & Legend
+├── map_layers.js           # CesiumJS Globe, Map Tiles, Radar Loop & Geometry Helpers
+├── chart_renderer.js       # 2D Vertical Altitude Profile & Hazard Band Canvas
+├── hud_card_renderer.js    # HUD Weather Advisory & Telemetry Card UI
+├── weather_renderer.js     # 3D G-AIRMET Icing/Turb & SIGMET Storm Volumes
+├── route_renderer.js       # 3D Aircraft Billboards, Flight Ribbons & Airport Pins
+├── export_service.js       # GPX & GeoJSON Flight Plan Exporter
+├── api_client.js           # Backend REST API Client
+├── route_controller.js     # Flight Forecast & Point-to-Point Route Orchestration
+└── flight_controller.js    # Main Entrypoint & Event Listeners
+
+

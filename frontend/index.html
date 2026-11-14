@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>4D Predictive Flight & Icing Avoidance Engine</title>
+  <link href="cesium/Widgets/widgets.css" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
+  <script src="cesium/Cesium.js"></script>
+</head>
+<body>
+  <div id="hud"></div>
+  <div id="cesiumContainer"></div>
+
+  <div id="profilePanel">
+    <div style="font-size:12px; color:#cbd5e1; margin-bottom:4px;">
+      Vertical Altitude Profile: <strong>Amber</strong> = Direct/Current Altitude | <strong>Green</strong> = Safe Corridor | <strong>Blue/Red Shaded</strong> = Icing/Storm Layers
+    </div>
+    <canvas id="altitudeChart"></canvas>
+  </div>
+
+  <script type="module" src="flight_controller.js"></script>
+</body>
+</html>
