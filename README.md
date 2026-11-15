@@ -1,6 +1,19 @@
 # 4D Predictive Flight, Weather & Icing Avoidance Engine
 
-Real-time 3D aviation trajectory forecasting, NOAA G-AIRMET/SIGMET hazard avoidance, multi-frame weather radar, winds-aloft ETA optimization, and en-route diversion airport pathfinding built with **FastAPI**, **Shapely**, and **CesiumJS**.
+Real-time 4D aviation trajectory forecasting and weather visualization engine built with FastAPI, Shapely, and CesiumJS—combining live ADS-B traffic, NOAA G-AIRMET/SIGMET hazard avoidance, multi-frame weather radar, winds-aloft ETA optimization, 3D A* detour routing, and en-route diversion airport pathfinding.
+
+# Full Project Overview
+
+AeroPath 4D is an interactive 3D airspace intelligence and flight-planning platform designed to visualize live air traffic alongside real-time atmospheric hazards and compute safe, fuel-efficient 3D flight corridors.
+
+Core Capabilities
+
+• Live Global ADS-B Airspace Tracking: Streams real-time aircraft positions, barometric altitudes, groundspeeds, and heading-rotated aircraft icons worldwide with automatic camera-panning refresh.
+• 3D Extruded Aviation Weather Volumes: Renders active NOAA Aviation Weather Center G-AIRMETs (structural icing, freezing levels, turbulence, and IFR zones) and SIGMETs (convective storms) as interactive 3D airspace blocks—complete with click-to-inspect advisory cards and a Low-Power GPU Mode for 2D flat polygons.
+• Multi-Source Animated Weather Radar: Overlays live multi-frame precipitation radar tiles and local surface conditions with a toggle between Weather.com (The Weather Company / global radar mosaic) and AviationWeather.gov (NOAA NEXRAD), playback animation, and real-time opacity sliders.
+• 4D Kinematic Trajectory & 3D A* Safe Corridor Routing: Projects 90-minute aircraft trajectories and computes lateral + vertical A* detours that steer around storm cells, climb or descend out of icing layers, maintain traffic separation, and optimize ETAs using multi-altitude GFS winds aloft.
+• Point-to-Point Route Planner & Diversion Finder: Builds Great-Circle flight plans between any two airports or cities, attaches color-coded VFR / MVFR / IFR / LIFR METAR & TAF badges, discovers configurable en-route alternate diversion airports, and exports flight plans to GPX or GeoJSON.
+
 
 ## Quick Setup (Installs Python `venv` & `frontend/cesium`)
 
