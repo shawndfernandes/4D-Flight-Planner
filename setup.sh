@@ -9,7 +9,7 @@ python3 -m venv backend/venv
 echo "=== 2. Downloading & Extracting CesiumJS into frontend/cesium ==="
 
 # Download latest CesiumJS package from github
-chmod +x setup_cesium.sh restart.sh
+chmod +x setup_cesium.sh restart.sh stop.sh
 ./setup_cesium.sh
 
 echo "=== 3. Creating default .env if missing ==="
